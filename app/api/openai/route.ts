@@ -1,6 +1,9 @@
+// route.ts
+
 import axios from "axios";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { initialCookingChefMessages } from "./messages";
 
 // Define the schema for text content
 const textContentSchema = z.object({
@@ -58,6 +61,9 @@ export async function POST(request: Request) {
   }));
 
   console.log("clonedMessages", JSON.stringify(clonedMessages));
+
+  // Always include chef-related prompts
+  clonedMessages.push(...initialCookingChefMessages);
 
   const payload = {
     model: "gpt-4-vision-preview",
