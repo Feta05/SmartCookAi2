@@ -141,10 +141,10 @@ function ChatContainer() {
             }`}
           >
             <div
-              className={`rounded-lg p-2 max-w-xs lg:max-w-md ${
+              className={`rounded-lg p-2 max-w-xs lg:max-w-md font-medium ${
                 message.role === "user"
-                  ? "bg-purple-500 text-white"
-                  : "bg-pink-500 text-white"
+                  ? "bg-[#151D29] text-white"
+                  : "bg-[#F6E30A] text-[#151D29]"
               }`}
             >
               {/* Ensure that content is an array before mapping */}
@@ -210,7 +210,7 @@ function ChatContainer() {
           onChange={handleMessageChange}
         ></textarea>
         <button
-          className="flex justify-center items-center p-2 rounded-full bg-blue-600 text-white w-10 h-10"
+          className="flex justify-center items-center p-2 rounded-full bg-[#151D29] text-[#F6E30A] w-10 h-10"
           onClick={sendMessage}
           disabled={isSending}
         >
